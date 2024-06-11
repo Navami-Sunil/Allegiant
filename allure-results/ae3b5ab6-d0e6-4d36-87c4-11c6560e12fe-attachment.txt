@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "(//div[@class='Radio__IconContainer-owm0zi-0 fIAozG'])[1]"
+}
