@@ -14,10 +14,13 @@ let month = $("(//div[@class=' css-1hwfws3'])[2]");
 let day =$("(//div[@class=' css-1wy0on6'])[3]");
 let year =$("//input[@id='adults.0.dob-year']");
 let continue3=$("//button[@data-hook='travelers-page_continue']")
+let add=$("(//span[text()='Add'])[2]");
+let check=$("(//div[@class='Checkbox__CheckboxWrapper-gyke29-0 kJEboX'])[1]");
+let rad=$("(//div[@class='Radio__IconContainer-owm0zi-0 fIAozG'])[3]");
 class home{
     async SearchFlight(){
     if(close)
-        await close.click();
+        await close.click();    
     await radio.click();
     browser.pause(2000);
      await departure.click();
@@ -41,7 +44,7 @@ class home{
      await continue1.scrollIntoView();
      await continue1.click();
      await browser.pause(5000);
-     await continue2.scrollIntoView();
+     await continue2.waitForClickable();
      await continue2.click();
      await 
      browser.pause(4000);
@@ -57,11 +60,22 @@ class home{
     await $("//div[text()='1']").click();
     await browser.pause(2000);
     await year.setValue("2002");
+    await browser.pause(3000);
+    await add.waitForClickable();
+    await add.click();
     await browser.pause(2000);
-    await continue3.scrollIntoView();
+    // await check.scrollIntoView();
+    await check.waitForClickable();
+    await check.click();
+    await browser.pause(2000);
+   // (await rad).scrollIntoView();
+    await rad.click();
+    
+    await continue3.waitForClickable();
+    // await browser.pause(3000);
     await continue3.click(); 
     
-    await browser.pause(4000);
+    await browser.pause(5000);
     }
 
     find_date = async()=>{

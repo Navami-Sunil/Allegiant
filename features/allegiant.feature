@@ -4,5 +4,7 @@ Feature: The Allegiant website
 
     Given I am on the home page
     When I add departure,airport,search flights
-    Then I should see available flights
+    And I select seats and bags
+    And I select car
+    Then I should see payment page
 
